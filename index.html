@@ -1,114 +1,291 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rack n Render</title>
-  <link rel="stylesheet" href="styles.css" />
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rack & Render | Business Optimisation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-</head>
-<body>
+  <body>
+    <header class="site-header">
+      <nav class="navbar">
+        <a href="#home" class="logo">
+          <span class="logo-mark">R&R</span>
+          <span class="logo-text">Rack & Render</span>
+        </a>
 
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+          <span></span>
+          <span></span>
+        </button>
 
-  <header>
-    <h1>Rack n Render | Business Solutions</h1>
-    <nav>
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </nav>
-  </header>
+        <div class="nav-links" id="navLinks">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#hidden-rack">Hidden Rack</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
 
-  
-  <main>
-    <img data:image/svg+xml>
-    <section id="home" class="intro">
-      <h2>Welcome to Rack n Render</h2>
-     <p>Transforming businesses through cutting-edge web development.</p>
-        <p>
-          We create stunning websites, optimize your processes, and deliver
-          solutions that drive growth.
-        </p>
-    </section>
+    <main>
+      <!-- HERO -->
+      <section class="hero section" id="home">
+        <div class="hero-bg-detail"></div>
 
-    <section id="services">
-      <h2>What We Do</h2>
-      <ul class="services-list">
-        <li class="service-item">
-          <h3>Website Development</h3>
+        <div class="hero-content">
+          <p class="eyebrow">
+            Business optimisation · Digital systems · Hidden experiences
+          </p>
+
+          <h1>
+            We optimise the way businesses
+            <span>operate, sell, book, report & grow.</span>
+          </h1>
+
+          <p class="hero-text">
+            Rack & Render helps businesses refine processes, build digital
+            systems, automate workflows, improve reporting, and unlock smarter
+            ways of working.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn primary-btn"
+              >Optimise Your Business</a
+            >
+            <a href="#hidden-rack" class="btn ghost-btn"
+              >Discover The Hidden Rack</a
+            >
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <p class="card-label">Current Focus</p>
+          <h3>Systems that look good and work harder.</h3>
+          <p>
+            We combine operational thinking with clean digital design to help
+            your business become sharper, faster, and easier to manage.
+          </p>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section services" id="services">
+        <div class="section-heading">
+          <p class="eyebrow">What we do</p>
+          <h2>Business solutions with a polished edge.</h2>
+          <p>
+            We design practical systems that remove friction, improve
+            visibility, and help your business run with more control.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span>01</span>
+            <h3>Website Development</h3>
             <p>
-              Custom websites and web applications built with modern
-              technologies for exceptional performance and user experience.
+              Clean, conversion-focused websites built to present your business
+              professionally.
             </p>
-        </li>
-        <li class="service-item">
-          <h3>Process Optimization</h3>
+          </article>
+
+          <article class="service-card">
+            <span>02</span>
+            <h3>Process Optimisation</h3>
             <p>
-              Streamline your operations with intelligent automation and
-              workflow improvements that save time and reduce costs.
+              We review how your business works and identify where time, money,
+              or clarity is being lost.
             </p>
-        </li>
-        <li class="service-item">
-          <h3>Business Solutions</h3>
+          </article>
+
+          <article class="service-card">
+            <span>03</span>
+            <h3>Automation</h3>
             <p>
-              Strategic consulting and custom software solutions tailored to
-              your unique business challenges and goals.
+              Reduce repetitive work with smarter workflows, templates, system
+              logic, and digital processes.
             </p>
-        </li>
-      </ul>
-    </section>
+          </article>
 
-    <section id="about">
-      <h2>About Rack n Render</h2>
-      <p>At Rack n Render, we combine creativity with strategic thinking to deliver exceptional services for businesses of all sizes. Whether you want a stunning website, optimized workflows, or fun entertainment options, we've got you covered.</p>
-      <p>Contact us today to find out how we can help your business thrive.</p>
-    </section>
+          <article class="service-card">
+            <span>04</span>
+            <h3>Dashboards & Reporting</h3>
+            <p>
+              Turn scattered data into useful dashboards, reports, and
+              management insights.
+            </p>
+          </article>
 
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <form id="contact-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required placeholder="Your full name" />
-        
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="your.email@example.com" />
-        
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
-        
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
+          <article class="service-card">
+            <span>05</span>
+            <h3>Systems Setup</h3>
+            <p>
+              Booking flows, client management tools, operational trackers, and
+              internal business systems.
+            </p>
+          </article>
 
-  <footer>
-    &copy; 2025 Rack n Render. All rights reserved.
-  </footer>
+          <article class="service-card">
+            <span>06</span>
+            <h3>Business Strategy</h3>
+            <p>
+              Practical support for improving operations, customer experience,
+              revenue flow, and scalability.
+            </p>
+          </article>
+        </div>
+      </section>
 
-  <script>
-    // Simple form submission handler — opens mail client
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
+      <!-- ABOUT -->
+      <section class="section about" id="about">
+        <div class="about-content">
+          <p class="eyebrow">About Rack & Render</p>
+          <h2>
+            We refine the parts of your business people do not always see.
+          </h2>
+        </div>
 
-      const name = this.name.value.trim();
-      const email = this.email.value.trim();
-      const message = this.message.value.trim();
+        <div class="about-text">
+          <p>
+            Behind every smooth business is a system that works. Rack & Render
+            helps businesses create better workflows, stronger digital
+            touchpoints, cleaner reporting, and more efficient operations.
+          </p>
 
-      if(name && email && message) {
-        const subject = encodeURIComponent(`Inquiry from ${name} via Rack n Render website`);
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+          <p>
+            We work with businesses that want more structure, better
+            presentation, and smarter ways to manage daily operations without
+            unnecessary complexity.
+          </p>
+        </div>
+      </section>
 
-        window.location.href = `mailto:info@racknrender.com?subject=${subject}&body=${body}`;
-      } else {
-        alert('Please fill in all fields.');
-      }
-    });
-  </script>
+      <!-- HIDDEN RACK -->
+      <section class="section hidden-rack" id="hidden-rack">
+        <div class="hidden-intro">
+          <p class="eyebrow">Not everything we optimise is digital.</p>
+          <h2>The Hidden Rack</h2>
+          <p>
+            A discreet business-to-business pool table rental offering for
+            venues that want to add entertainment without the maintenance
+            burden.
+          </p>
 
-<script src="scroll-header.js"></script>
-</body>
+          <button class="btn primary-btn" id="unlockRackBtn">
+            Unlock The Hidden Rack
+          </button>
+        </div>
+
+        <div class="rack-panel" id="rackPanel">
+          <div class="rack-content">
+            <p class="eyebrow green">Private table placement</p>
+            <h3>
+              Pool tables for bars, coffee shops, lounges & business spaces.
+            </h3>
+
+            <p>
+              We rent pool tables to establishments that want the value of
+              having a table on-site without worrying about setup, repairs,
+              upkeep, or ongoing maintenance.
+            </p>
+
+            <div class="rack-benefits">
+              <div>
+                <h4>No maintenance stress</h4>
+                <p>
+                  We help remove the operational headache that comes with owning
+                  a table.
+                </p>
+              </div>
+
+              <div>
+                <h4>Better venue experience</h4>
+                <p>
+                  Add a social feature that keeps customers engaged for longer.
+                </p>
+              </div>
+
+              <div>
+                <h4>Business-friendly rental</h4>
+                <p>
+                  A simple solution for venues that want the benefit without the
+                  full ownership cost.
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="mailto:info@racknrender.com?subject=The Hidden Rack Enquiry"
+              class="btn ghost-btn"
+            >
+              Enquire About Pool Table Rental
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section contact" id="contact">
+        <div class="section-heading">
+          <p class="eyebrow">Start the conversation</p>
+          <h2>Ready to optimise your business?</h2>
+          <p>
+            Tell us what you are building, fixing, improving, or trying to make
+            easier. We’ll help you turn it into a cleaner system.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your name" required />
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="message">What do you need help with?</label>
+              <textarea
+                id="message"
+                rows="5"
+                placeholder="Tell us about your business, website, system, or idea..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn primary-btn">Send Enquiry</button>
+          </form>
+
+          <div class="contact-card">
+            <p class="eyebrow">Direct contact</p>
+            <h3>Prefer email?</h3>
+            <p>Reach out directly and we’ll get back to you.</p>
+
+            <a href="mailto:info@racknrender.com" class="email-link">
+              info@racknrender.com
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Rack & Render. All rights reserved.</p>
+      <a href="#home">Back to top</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
-
-
