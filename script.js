@@ -30,9 +30,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 const revealElements = document.querySelectorAll('.reveal');
-if (prefersReducedMotion) {
-  revealElements.forEach((element) => element.classList.add('is-visible'));
-} else {
+if (!prefersReducedMotion && 'IntersectionObserver' in window) {
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
