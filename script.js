@@ -123,9 +123,7 @@ if (!prefersReducedMotion) {
 
 const projectForm = document.querySelector('[data-project-form]');
 const formStatus = document.querySelector('#form-status');
-const formSuccess = document.querySelector('[data-form-success]');
 const submitButton = projectForm.querySelector('[type="submit"]');
-const submitButtonLabel = submitButton.innerHTML;
 
 function clearFieldError(field) {
   const error = document.querySelector(`#${field.id}-error`);
@@ -164,57 +162,47 @@ function validateProjectForm(form) {
   return !firstInvalid;
 }
 
+function buildProjectEmail(data) {
+  const name = data.get('name').trim();
+  const email = data.get('email').trim();
+  const business = data.get('business').trim() || 'Not provided';
+  const focus = data.get('focus').trim();
+  const brief = data.get('brief').trim();
+  const subject = `Project brief from ${business === 'Not provided' ? name : business}`;
+  const body = [
+    'Hi Rack & Render,',
+    '',
+    'I would like to discuss a project.',
+    '',
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Business: ${business}`,
+    `Project focus: ${focus}`,
+    '',
+    'What needs to work better?',
+    brief,
+    '',
+    'Regards,',
+    name
+  ].join('\n');
+
+  return `mailto:info@racknrender.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 projectForm.querySelectorAll('input, select, textarea').forEach((field) => {
   field.addEventListener('input', () => clearFieldError(field));
   field.addEventListener('change', () => clearFieldError(field));
 });
 
-projectForm.addEventListener('submit', async (event) => {
+projectForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const form = event.currentTarget;
   if (!validateProjectForm(form) || submitButton.disabled) return;
 
-  const endpoint = form.dataset.endpoint.trim();
   formStatus.classList.remove('is-error');
   formStatus.setAttribute('role', 'status');
-  formSuccess.hidden = true;
-
-  if (!endpoint) {
-    formStatus.textContent = 'Online submission is not connected yet. Please email info@racknrender.com while the production endpoint is being configured.';
-    formStatus.classList.add('is-error');
-    formStatus.setAttribute('role', 'alert');
-    return;
-  }
 
   const data = new FormData(form);
-  const payload = Object.fromEntries(data.entries());
-
-  submitButton.disabled = true;
-  submitButton.textContent = 'Sending...';
-  form.setAttribute('aria-busy', 'true');
-  formStatus.textContent = 'Sending your project brief...';
-
-  try {
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    if (!response.ok) throw new Error(`Submission failed with status ${response.status}`);
-
-    form.reset();
-    [...form.children].forEach((element) => {
-      if (!element.matches('[data-form-success]')) element.hidden = true;
-    });
-    formSuccess.hidden = false;
-    formSuccess.focus();
-  } catch (error) {
-    formStatus.textContent = 'We could not send your project brief. Please try again, or email info@racknrender.com directly.';
-    formStatus.classList.add('is-error');
-    formStatus.setAttribute('role', 'alert');
-    submitButton.disabled = false;
-    submitButton.innerHTML = submitButtonLabel;
-  } finally {
-    form.removeAttribute('aria-busy');
-  }
+  formStatus.textContent = 'Opening your email app. Review the message, then press Send.';
+  window.location.href = buildProjectEmail(data);
 });

@@ -14,4 +14,4 @@ Open `http://localhost:4173/`.
 
 Publish from the `main` branch and repository root. The `CNAME` file configures the custom domain `racknrender.com`.
 
-The Start a Project form is frontend-ready but still requires a verified HTTPS form endpoint in `index.html` before online submissions will work.
+The Start a Project form validates the brief and opens a pre-filled message in the visitor's default email app. The static site does not collect or store submissions.

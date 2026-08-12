@@ -277,7 +277,7 @@
           <a class="direct-email" href="mailto:info@racknrender.com">info@racknrender.com <span class="text-arrow" aria-hidden="true">&#8599;&#65038;</span></a>
         </div>
 
-        <form class="project-form reveal" data-project-form data-endpoint="" novalidate>
+        <form class="project-form reveal" data-project-form novalidate>
           <div class="field-pair">
             <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
             <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
@@ -286,13 +286,9 @@
             <div class="field"><label for="business">Business</label><input id="business" name="business" type="text" autocomplete="organization"></div>
             <div class="field"><label for="focus">Project focus</label><select id="focus" name="focus"><option>Website and customer journey</option><option>Process and systems</option><option>Automation</option><option>Reporting and financial visibility</option><option>Business operations and strategy</option><option>Not sure yet</option></select></div>
           </div>
-          <div class="field"><label for="brief">What needs to work better?</label><textarea id="brief" name="brief" rows="5" required></textarea></div>
+          <div class="field"><label for="brief">What needs to work better?</label><textarea id="brief" name="brief" rows="5" maxlength="1800" required></textarea></div>
           <button class="button button-primary form-submit" type="submit">Send project brief <span class="text-arrow" aria-hidden="true">&#8599;&#65038;</span></button>
-          <p class="form-status form-note" id="form-status" role="status" aria-live="polite">Online submission is being prepared for production. You can still contact us directly by email.</p>
-          <div class="form-success" data-form-success hidden tabindex="-1">
-            <strong>Thanks &mdash; we've got it.</strong>
-            <p>We'll review what you've sent and get back to you.</p>
-          </div>
+          <p class="form-status form-note" id="form-status" role="status" aria-live="polite">This opens a pre-filled email in your device's mail app.</p>
         </form>
       </div>
     </section>
@@ -307,6 +303,6 @@
     <div class="shell footer-bottom"><span>&copy; 2026 Rack &amp; Render</span><a href="#home">Back to top &uarr;</a></div>
   </footer>
 
-  <script src="script.js?v=20260812-2" defer></script>
+  <script src="script.js?v=20260812-6" defer></script>
 </body>
 </html>
